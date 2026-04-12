@@ -13,8 +13,10 @@ import {IoLogOut} from "react-icons/io5";
 import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 import axios from "axios";
+import { useLanguage } from "../context/LanguageContext";
 const Navbar = ({isLogin, setIsLogin}) => {
   const navigate = useNavigate();
+  const {lang, setLang} = useLanguage()
   // const [isLogin, setIsLogin] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -93,6 +95,14 @@ const Navbar = ({isLogin, setIsLogin}) => {
                   className="font-semibold text-white hover:border-b-2 text-md"
                 >
                   Market
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"/voice"}
+                  className="font-semibold text-white hover:border-b-2 text-md"
+                >
+                  Voice Assistant
                 </Link>
               </li>
             </ul>
@@ -220,6 +230,18 @@ const Navbar = ({isLogin, setIsLogin}) => {
                 Market
               </Link>
             </li>
+            <div>
+              <select
+        value={lang}
+        onChange={(e) => setLang(e.target.value)}
+        className="text-black px-2 py-1 rounded"
+      >
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="bn">Bengali</option>
+        <option value="mr">Marathi</option>
+      </select>
+          </div>
           </ul>
           <div className="w-[80%] mx-auto my-5">
             <form onSubmit={handleSubmit}>

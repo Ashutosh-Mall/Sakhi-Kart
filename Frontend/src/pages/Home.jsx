@@ -6,15 +6,17 @@ import {
   IoLeafOutline,
 } from "react-icons/io5";
 import Card from "../components/Card";
+import { useLanguage } from "../context/LanguageContext";
 
 const Home = () => {
+  const {t} = useLanguage()
   return (
     <div className="w-full min-h-screen bg-[#f7faf7] font-sans">
 
       {/* HERO SECTION */}
       <div className="relative text-center px-4 py-20 md:py-32 bg-gradient-to-b from-green-100 to-white">
         <h1 className="text-4xl md:text-6xl font-extrabold text-green-900 leading-tight">
-          Sakhi Kart 🌸
+          {t.title}
         </h1>
 
         <p className="mt-6 text-green-800 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">

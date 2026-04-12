@@ -6,6 +6,8 @@ import cors from "cors";
 import authRouter from './routes/auth.routes.js'
 import profileRouter from './routes/profile.routes.js'
 import botRouter from './routes/bot.routes.js'
+import uploadRoutes from "./routes/upload.routes.js";
+import chatRouter from "./routes/chat.routes.js";
 
 const app = express();
 const port = 5000;
@@ -27,6 +29,8 @@ app.get("/", (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/bot', botRouter);
+app.use("/api", uploadRoutes);
+app.use("/api", chatRouter);
 
 const startServer = async () => {
   try {

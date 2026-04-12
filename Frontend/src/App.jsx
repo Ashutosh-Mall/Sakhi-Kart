@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import UpdateProfile from "./pages/UpdateProfile";
 import Profile from "./pages/Profile";
 import Chatbot from "./components/Chatbot";
+import Photo from "./pages/Photo";
+import VoiceAssistant from "./pages/VoiceAssistant";
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
@@ -36,6 +38,8 @@ const App = () => {
         <Route path="/profile" element={<Profile />}/>
         <Route path="/signup" element={<Signup setIsLogin={setIsLogin} />} />
         <Route path="/login" element={<Login setIsLogin={setIsLogin} />} />
+        <Route path="/createProduct" element={<Photo />} />
+        <Route path="/voice" element={<VoiceAssistant/>}/>
       </Routes>
     </div>
   );
